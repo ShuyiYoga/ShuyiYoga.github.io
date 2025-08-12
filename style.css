@@ -1,0 +1,24 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f9f3e9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    color: #5a7d59;
+}
+
+.class {
+    background: white;
+    border-left: 4px solid #5a7d59;
+    padding: 15px;
+    margin: 20px 0;
+}
