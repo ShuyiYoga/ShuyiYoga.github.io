@@ -125,7 +125,15 @@
     </header>
     
     <div class="form-container">
-        <form action="https://formspree.io/f/you@shuyimahmoud.com" method="POST">
+        <!-- HTML Form + Gmail Solution -->
+        <form action="mailto:you@shuyimahmoud.com" 
+              method="POST" 
+              enctype="text/plain"
+              onsubmit="return validateForm()">
+            
+            <!-- Hidden Subject Field -->
+            <input type="hidden" name="subject" value="New Yoga Inquiry from Website">
+            
             <!-- Name Field -->
             <div class="form-group">
                 <label for="name">Your Name</label>
@@ -135,16 +143,19 @@
             <!-- Email Field -->
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="_replyto" required>
+                <input type="email" id="email" name="email" required>
             </div>
+            
+            <!-- Service Selection -->
             <div class="form-group">
-    <label for="service">Service Interest</label>
-    <select id="service" name="service">
-        <option value="vinyasa">Vinyasa Classes</option>
-        <option value="coaching">Spiritual Coaching</option>
-        <option value="workshop">Workshops</option>
-    </select>
-</div>
+                <label for="service">Interest</label>
+                <select id="service" name="service">
+                    <option value="vinyasa">Vinyasa Classes</option>
+                    <option value="coaching">Spiritual Coaching</option>
+                    <option value="retreat">Retreat Inquiry</option>
+                </select>
+            </div>
+            
             <!-- Message Field -->
             <div class="form-group">
                 <label for="message">Message</label>
@@ -154,9 +165,22 @@
             <!-- Submit Button -->
             <button type="submit">Send Message</button>
         </form>
+        
+        <!-- Simple Form Validation -->
+        <script>
+            function validateForm() {
+                const email = document.getElementById("email").value;
+                if (!email.includes("@")) {
+                    alert("Please enter a valid email address");
+                    return false;
+                }
+                return true;
+            }
+        </script>
     </div>
     
     <footer>
+        <p>Connect with me on <a href="https://instagram.com/yourhandle" style="color:white; font-weight:500;">Instagram</a></p>
         <p>Email: you@shuyimahmoud.com</p>
     </footer>
 </body>
